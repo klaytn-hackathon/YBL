@@ -2,7 +2,7 @@
 POG (Personal Opinion Voting Game)
 
 ![alt text](https://www.yonsei.ac.kr/_res/sc/img/intro/img_symbol6.png)
-<img src="https://yonseiblockchain.org/wp-content/uploads/2019/02/YBL-%EB%A1%9C%EA%B3%A0-%EB%B0%9D%EC%9D%80-%EB%B0%B0%EA%B2%BD-3.png" width="130" height="390">
+<img src="https://yonseiblockchain.org/wp-content/uploads/2019/02/YBL-%EB%A1%9C%EA%B3%A0-%EB%B0%9D%EC%9D%80-%EB%B0%B0%EA%B2%BD-3.png" width="390" height="130">
 
 ## Youtube link (Demo Video) 
 
