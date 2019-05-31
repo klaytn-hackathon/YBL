@@ -1,6 +1,6 @@
 # YBL
 POG (Personal Opinion Voting Game)
-![yonseiLogo](./C:\Users\Byeongheon Kang\Desktop/yonseiLogo.png)
+![yonseiLogo](./C:/Users/Byeongheon Kang/Desktop/yonseiLogo.png)
 
 ## Youtube link (Demo Video) 
 
