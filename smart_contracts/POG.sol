@@ -6,7 +6,7 @@ import "./POG_Token.sol";
 contract POG is Ownable, POG_Token {
     mapping(address => questioner) public questioners; // 질문자의 정보
     mapping(address => voter) public voters; // 투표자의 정보
-
+    
     // 질문자의 정보를 담은 struct
     struct questioner {
         address qAddress; // 질문자의 주소
@@ -38,12 +38,12 @@ contract POG is Ownable, POG_Token {
         running = false;
         choiceSize = 5; // 선택지는 5개
         questionID = 0;
-        voteCountSum = 0;
         YBL = msg.sender; 
     }
 
     // 질문자가 질문을 생성
     function makeQuestion(uint8 _min) public {
+        voteCountSum = 0;
         require(!running && POG_Token.balanceOf[msg.sender] >= 5);
         endTime = now + (_min * 60);
 
@@ -95,5 +95,12 @@ contract POG is Ownable, POG_Token {
             }
         }
         voters[msg.sender].voted = false;
+    }
+
+    function endGame() {
+        require(msg.sender == owner);
+        for (uint8 j = 0; j < voteCountSum; j++) {
+            voters[voterArr[j]].voted = false;
+        }
     }
 }
