@@ -6,7 +6,6 @@ import "./POG_Token.sol";
 contract POG is Ownable, POG_Token {
     mapping(address => questioner) public questioners; // 질문자의 정보
     mapping(address => voter) public voters; // 투표자의 정보
- 
 
     // 질문자의 정보를 담은 struct
     struct questioner {
@@ -20,11 +19,6 @@ contract POG is Ownable, POG_Token {
         bool voted; // 만약 true이면 그 사람은 이미 투표한 상태
         uint8 voteOn; // 투표한 제안의 인덱스
     }
-    // 선택지에 대한 정보를 담은 struct
-   // struct choice {
-    //    uint choiceID; // 선택지 아이디
-      //  uint voteCount; // 누적된 투표 수
-//    }
     uint[5] public choice;
 
     address public YBL; // 스마트 컨트랙트의 주인
@@ -39,14 +33,6 @@ contract POG is Ownable, POG_Token {
     
     address[] public voterArr;
 
-    event voteEnded(uint8 highestChoice); // 투표 끝나면 이벤트 발생
-
-    //modifier onlyBefore(uint _timer) { require(now < _timer); _; } // 투표 끝나기 전에만
-    //modifier onlyAfter(uint _timer) { require(now > _timer); _; } // 투표 끝난 후에만
-
-    // choice struct의 배열
-    //choice[] public choices;
-
     // POG contract의 constructor
     constructor() public {
         running = false;
@@ -56,23 +42,14 @@ contract POG is Ownable, POG_Token {
         YBL = msg.sender; 
     }
 
-
-
     // 질문자가 질문을 생성
-    function makeQuestion() public {
+    function makeQuestion(uint8 _min) public {
         require(!running && POG_Token.balanceOf[msg.sender] >= 5);
-        endTime = now + (60);
+        endTime = now + (_min * 60);
 
         // 잔고 확인 후 질문을 하면 5POGT가 빠져나감
-       
         POG_Token.balanceOf[msg.sender] -= 5; 
-        
-        // 선택지 저장
-       // for (uint i = 0; i < choiceSize; i++) {
-        //    choices[questionID][i] = i;
-        //    choices[i].voteCount = 0;        
-        //}
-        
+      
         // 질문자 정보 저장
         questioners[msg.sender] = questioner(msg.sender, questionID, now);
         questionID += 1;
