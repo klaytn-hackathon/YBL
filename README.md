@@ -1,7 +1,6 @@
 # YBL
 POG (Personal Opinion Voting Game)
 
----
 
 ## Youtube link (Demo Video) 
 
