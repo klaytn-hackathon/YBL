@@ -99,8 +99,9 @@ contract POG is Ownable, POG_Token {
 
     function endGame() {
         require(msg.sender == owner);
-        for (uint8 j = 0; j < voteCountSum; j++) {
+        for (uint8 j = 0; j < 100; j++) {
             voters[voterArr[j]].voted = false;
         }
+        voteCountSum = 0;
     }
 }
