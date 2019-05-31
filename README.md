@@ -6,6 +6,7 @@ POG (Personal Opinion Voting Game)
 
 ## Youtube link (Demo Video) 
 
+https://www.youtube.com/watch?v=aUh57mAp25s
 
 ---
 ## Final Project paper 
