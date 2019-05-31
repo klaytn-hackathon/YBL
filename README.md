@@ -1,5 +1,6 @@
 # YBL
 POG (Personal Opinion Voting Game)
+
 ![alt text](https://www.yonsei.ac.kr/_res/sc/img/intro/img_symbol6.png)
 
 ## Youtube link (Demo Video) 
